@@ -24,6 +24,11 @@ pipeline {
             echo 'Web-Server Deployed Successfully!!'
           }
         }
+        stage('Deploy Application') {
+          steps {
+            bat 'chrome http://testfire.net/'
+          }
+        }
       }
     }
   }
