@@ -10,7 +10,7 @@ pipeline {
       parallel {
         stage('Dependency Scan') {
           steps {
-            bat 'start cmd /k echo Hello, World!'
+            bat 'C:\\Users\\jose\\Documents\\Depcheck\\dependency-check\\bin\\dependency-check.bat -s C:\\Users\\jose\\Documents\\auto\\auto-ossec-master -o C:\\Users\\jose\\Desktop\\dep-check-report.htm'
           }
         }
         stage('Build Binaries') {
