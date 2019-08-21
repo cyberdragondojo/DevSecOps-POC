@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Dependency Check') {
       steps {
-        snykSecurity(projectName: 'cyberdragondojo/auto-ossec', organisation: 'cyberdragondojo')
+        dependencyCheck()
       }
     }
     stage('SAST SCAN') {
