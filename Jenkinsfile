@@ -5,7 +5,7 @@ pipeline {
       parallel {
         stage('SAST') {
           steps {
-            sh 'echo Static Code Analysis Complete'
+            sh 'echo Static-Code-Analysis-Complete!'
           }
         }
         stage('Dependency Check') {
