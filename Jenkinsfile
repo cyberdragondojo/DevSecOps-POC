@@ -21,6 +21,7 @@ pipeline {
         stage('Deploy Web-Server') {
           steps {
             sleep 75
+            echo 'Web-Server Deployed Successfully!!'
           }
         }
       }
