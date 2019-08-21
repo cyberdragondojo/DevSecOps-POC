@@ -10,7 +10,7 @@ pipeline {
       parallel {
         stage('Dependency Scan') {
           steps {
-            bat(script: 'start cmd /k echo Hello, World!', returnStatus: true)
+            bat 'start cmd /k echo Hello, World!'
           }
         }
         stage('Build Binaries') {
