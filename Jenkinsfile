@@ -10,7 +10,7 @@ pipeline {
       parallel {
         stage('Dependency Scan') {
           steps {
-            bat(script: 'START C:\\Users\\jose\\Documents\\Depcheck\\dependency-check\\bin\\dependency-check.bat -s C:\\Users\\jose\\Documents\\auto\\auto-ossec-master -o C:\\Users\\jose\\Desktop\\depcheck.htm', encoding: 'UTF-8', returnStatus: true, returnStdout: true)
+            bat(script: 'START C:\\Users\\jose\\Documents\\Depcheck\\dependency-check\\bin\\dependency-check.bat -s C:\\Users\\jose\\Documents\\auto\\auto-ossec-master -o C:\\Users\\jose\\Desktop\\depcheck.htm', encoding: 'UTF-8', returnStatus: true)
           }
         }
         stage('Build Binaries') {
