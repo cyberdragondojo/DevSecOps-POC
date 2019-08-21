@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Deploy Application') {
           steps {
-            bat 'chrome http://testfire.net/'
+            bat 'chrome.exe http://testfire.net/'
           }
         }
       }
