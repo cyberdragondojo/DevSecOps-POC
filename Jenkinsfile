@@ -18,9 +18,9 @@ pipeline {
             echo 'Build Successful!'
           }
         }
-        stage('Deploy Webserver') {
+        stage('Deploy Web-Server') {
           steps {
-            sh 'echo \'Web-Server Deployed Successfully!\''
+            sleep 75
           }
         }
       }
