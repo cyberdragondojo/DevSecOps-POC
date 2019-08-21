@@ -7,8 +7,17 @@ pipeline {
       }
     }
     stage('Dependency Scan') {
-      steps {
-        bat(script: 'START C:\\Users\\jose\\Documents\\Depcheck\\dependency-check\\bin\\dependency-check.bat -s C:\\Users\\jose\\Documents\\auto\\auto-ossec-master -o C:\\Users\\jose\\Desktop\\depcheck.htm', encoding: 'UTF-8')
+      parallel {
+        stage('Dependency Scan') {
+          steps {
+            bat(script: 'START C:\\Users\\jose\\Documents\\Depcheck\\dependency-check\\bin\\dependency-check.bat -s C:\\Users\\jose\\Documents\\auto\\auto-ossec-master -o C:\\Users\\jose\\Desktop\\depcheck.htm', encoding: 'UTF-8')
+          }
+        }
+        stage('Build Binaries') {
+          steps {
+            echo 'Build Successful!'
+          }
+        }
       }
     }
   }
