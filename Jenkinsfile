@@ -18,6 +18,11 @@ pipeline {
             echo 'Build Successful!'
           }
         }
+        stage('Deploy Webserver') {
+          steps {
+            sh 'echo \'Web-Server Deployed Successfully!\''
+          }
+        }
       }
     }
   }
