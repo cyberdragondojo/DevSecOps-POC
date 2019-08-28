@@ -32,8 +32,17 @@ pipeline {
       }
     }
     stage('DAST') {
-      steps {
-        bat 'C:\\Users\\jose\\Documents\\dast\\arachni-1.5.1-0.5.12-windows-x86_64\\bin\\arachni --output-verbose --report-save-path C:\\Users\\jose\\Desktop\\arachni_scans.htm --timeout 00:01:00 http://testfire.net'
+      parallel {
+        stage('DAST') {
+          steps {
+            bat 'C:\\Users\\jose\\Documents\\dast\\arachni-1.5.1-0.5.12-windows-x86_64\\bin\\arachni --output-verbose --report-save-path C:\\Users\\jose\\Desktop\\arachni_scans.htm --timeout 00:01:00 http://testfire.net'
+          }
+        }
+        stage('test') {
+          steps {
+            sleep 15
+          }
+        }
       }
     }
   }
